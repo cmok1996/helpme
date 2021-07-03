@@ -1,0 +1,193 @@
+SQL IBM DB2
+
+Entity = tables,  attibutes = columns/field names, tuple = row/instance
+Each instance/row is identified by a unique Primary Key
+
+DDL - Data Definition Language : Define, change or drop objects (table)
+1. CREATE - creates table
+2. ALTER - adding, dropping, modifying columns data types
+3. TRUNCATE - Deleting data in table but not the table itself
+4. DROP - Delete a table
+
+DML - Data Manipulation Language : Read and modify data in tables
+CRUD Operations : Create, Read, Update, Delete rows
+
+1. INSERT - insert rows into table
+2. SELECT - Reads rows of table
+3. UPDATE - Edit rows in a table
+4. DELETE - Remove rows in a table
+
+CREATE TABLE table_name
+	(
+	column_name_1 datatype optional parameters (eg, primary key, not null, default null, etc),
+	...
+	column_name_n datatype
+	PRIMARY KEY (column_name)
+	FOREIGN KEY (column_name) REFERENCES table2(column_name)
+	)
+
+ALTER TABLE table_name 
+	(
+	ADD CONSTRAINT constraint_name
+	PRIMARY/FOREIGN KEY (column_name)
+	--if FK REFERENCES table2(column_name)
+	)
+
+
+datatypes
+1. char(n) : fixed n characters
+2. varchar(n) : Variable characters of max length of n
+
+Optional parameters (constraints)
+1. PRIMARY KEY - prevent duplicates
+2. FOREIGN KEY - Ensure that value exist in the referenced table
+3. NOT NULL - cannot be empty
+
+Index
+Primary index contains the key fields of the table and a pointer to the non key-fields of the table
+Used to quickly locate data without having to search every row in a database every time a database table is accessed
+At the cost of additional writes and storage space to maintain index data structure
+PK - not null, unique, only 1 per table
+FK - maintain Referential Integrity, ensure the values in this column exist in another column
+
+SELECT statements : Input = query, Output = result; use '' instead of "" unless defining/accessing column names with space.
+
+SELECT <column_1>, <column_2> from table_name (* if want all columns, use "column with space", otherwise just write the column without "" or '')
+WHERE <column_1> = 'x' (requires predicate, ie true/false statement via logic operators =, <, >, >=, <=, <>)
+LIMIT 3 #to see sample data
+
+-- Comments
+
+Expressions in SELECT statement
+COUNT(column_1) - count aggregate
+DISTINCT column_1 - unique rows only
+LIMIT - used to restrict the number of rows retrieved from database
+CASE WHEN column_1 ... THEN ... 
+     WHEN column_2 ... THEN ...
+     ELSE NULL AS column_name -- AS column_name or "column name" if want the space
+
+--Write a query that shows the number of players at schools with names that start with A through M, and the number at schools with names starting with N - Z.
+SELECT CASE WHEN school_name < 'N' THEN 'A-M'
+WHEN school_name >= 'N' THEN 'N-Z' ELSE NULL END AS school_name_group,
+COUNT(*) AS players
+FROM benn.college_football_players
+GROUP BY 1
+
+
+Adding rows to a table
+- create the table using CREATE TABLE
+- populate table with data using INSERT statement
+
+INSERT INTO table_name
+	(<column_name>,...)
+VALUES (...), (...), (...) ... #can add multiple rows at one time by adding more (...),
+
+Altering rows to a table - edit data
+- UPDATE statement - edit rows of data
+- DELETE statement - delete rows of data
+- ADD CONSTRAINT
+
+UPDATE table_name
+SET column_1 = '...' column_2 = '...'
+WHERE column_primary_key = '...'
+
+DELETE FROM table_name
+WHERE column_primary_key IN ('...', '...', '...')
+
+Matching strings WHERE clause LIKE predicate; WHERE column_1 LIKE 'r%'
+Matching based on ranges; WHERE column_1 >= x AND column_1 <= y (or BETWEEN x AND y)
+Matching based on set of values; WHERE column_1 = 'x' OR column_1 = 'y' (or IN ('x,' , 'y') operator
+
+Sorting Result Sets using ORDER BY clause; by default in ascending order
+SELECT column_1 FROM table_name WHERE column_1 = 'x' ORDER BY column_1 (or the column number in the results set)
+
+GROUP BY clause ; HAVING clause is only used for GROUP BY
+(eg, find how many authors come from the same country; list the countries with the number of authors coming from the country)
+SELECT column_1, COUNT(column_1) AS Count from table_name GROUP BY column_1 HAVING Count > 4
+
+Date and Time built-in functions
+DATE : YYYYMMDD
+TIME : HHMMSS
+TIMESTAMP : YYYYXXDDHHMMSSZZZZZZ
+Date/Time functions : YEAR(), MONTH(), DAY(), DAYOFMONTH(), DAYOFWEEK(), DAYOFYEAR(), WEEK(), HOUR(), MINUTE(), SECOND()
+Can also perform arithmetic operations : SELECT(DATE + 3 DAYS) AS RESCUEDATE from table_name
+
+Sub-query : outer_query(sub_query)
+WHERE clause : SELECT * FROM table_name WHERE column_1 = (SELECT AVG(column_1) FROM table_name);
+Column Expressions : SELECT column1, (SELECT AVG(column1) FROM table_name) AS AVG_column1 FROM table_name #repeats agg value throughout rows
+Table Expressions:SELECT * FROM (SELECT column1, column2 FROM table_name) AS table2;
+
+Accessing multiple tables
+SELECT * FROM Employees WHERE DEP_ID IN (SELECT DEP_ID_DEP FROM Departments WHERE loc_id = "123");
+SELECT E.EMP_ID, D.DEP_NAME FROM Employees E, Departments D WHERE E.Dep_ID = D.Dept_ID_DEP; #Implicit joins - each row in table 1 is joined with each row in table2, result set is a product of rows
+
+
+Writing code using DB_API
+#Connection Objects - database connections & manage transactions
+#Cursor Objects - Database queries, scroll through result set, retrieve result
+
+1. Load library
+from dbmodule import connect
+
+2. Create connection object
+Connection = connect('databasename', 'username', 'password')
+
+3. Create cursor object
+Cursor = Connection.cursor()
+
+4. Run Queries
+Cursor.execute('sql select statement')
+Results = Cursor.fetchall()
+
+5. Free resources
+Cursor.close()
+Connection.close()
+
+IBM_DB running sql statements
+dsn = (
+    "DRIVER={0};"
+    "DATABASE={1};"
+    "HOSTNAME={2};"
+    "PORT={3};"
+    "PROTOCOL={4};"
+    "UID={5};"
+    "PWD={6};").format(dsn_driver, dsn_database, dsn_hostname, dsn_port, dsn_protocol, dsn_uid, dsn_pwd)
+try:
+    conn = ibm_db.connect(dsn, "", "")
+    print ("Connected to database: ", dsn_database, "as user: ", dsn_uid, "on host: ", dsn_hostname)
+
+except:
+    print ("Unable to connect: ", ibm_db.conn_errormsg() )
+
+stmt = ibm_db.exec_immediate(conn, "sql statement;", optional)
+ibm_db.fetch_both(stmt)
+
+Using Pandas
+import pandas as pd
+import ibm_db_dbi
+pconn = ibm_db_dbi.Connection(conn) #connection for pandas
+df = pd.read_sql('SELECT * FROM table', pconn)
+df.head()
+
+Using SQL magic in jupyter. Need to install ipython-sql-extension and ibm_db_sa driver
+%load_ext sql
+#connect to database using uri
+%sql ibm_db_sa://srl98591:sz9mj3nqc-n3db91@dashdb-txn-sbox-yp-dal09-12.services.dal.bluemix.net:50000/BLUDB
+%sql select * from table OR %%sql for multi-line sql statements
+result = %sql select...
+df = result.DataFrame()
+
+Join operators
+Select B.Borrower_ID, B.Last_Name, L.Loan_Date, C.Status FROM Borrower B INNER JOIN Loan L ON B.Borrower_ID = L.Borrower_ID INNER JOIN Copy C ON L.Copy_ID = C.Copy_ID
+
+Real data
+
+#replace whitespaces and () with _, eg, Name of dogs (good) = Name_of_dogs__good_
+#Use \ to escape special characters
+	 
+selectQuery = 'select "Id",  from table' #mixed case "Id" where "Name_of_dog" = \'Huggy\' '
+
+Getting tables from database
+DB2: select TABSCHEMA, TABNAME, CREATE_TIME from syscat.tables WHERE tabschema = 'ABC12345' #DB2 username
+SQL Server: select * from information_schema.tables
+Oracle: select * from all_tables
