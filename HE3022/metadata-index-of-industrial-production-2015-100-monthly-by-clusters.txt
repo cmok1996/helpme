@@ -1,0 +1,134 @@
+# Metadata for Index of Industrial Production (2015 = 100), Monthly, by Clusters
+---
+Identifier: 'c8f14d47-65d6-4179-8a5e-310f369802b4'
+Name: 'index-of-industrial-production-2015-100-monthly-by-clusters'
+Title: 'Index of Industrial Production (2015 = 100), Monthly, by Clusters'
+Description:
+  - 'Manufacturing clusters'
+  - '(Classified according to Singapore Standard Industrial Classification (SSIC)
+    2015)'
+Topics:
+  - 'Economy'
+Keywords:
+  - 'Business'
+  - 'Companies'
+  - 'Economic Growth'
+  - 'Economic Outlook'
+  - 'GDP'
+  - 'Gross Domestic Product'
+  - 'Manufacturing'
+Publisher:
+  Name: 'Economic Development Board'
+  Admin 1:
+    Name: 'Leong Pui Ling'
+    Department: 'Research and Statistics Unit'
+    Email: 'leong_pui_ling@edb.gov.sg'
+  Admin 2:
+    Name: 'Quin Chong Tze Ming'
+    Department: 'Research and Statistics Unit'
+    Email: 'quin_chong@edb.gov.sg'
+Sources:
+  - 'Economic Development Board'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=7991&exportType=tidy'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Monthly'
+Coverage: '1983-01-01 to 2019-12-31'
+Last Updated: '2020-02-25T21:42:46.749605'
+Resources:
+  -
+    Identifier: 'c109f9ca-0335-4aa9-bb00-c48d11b3e162'
+    Title: 'Index Of Industrial Production (2015=100), Monthly'
+    Url: 'https://storage.data.gov.sg/index-of-industrial-production-2015-100-monthly-by-clusters/resources/index-of-industrial-production-2015-100-monthly-2020-02-25T21-41-10Z.csv'
+    Format: 'CSV'
+    Coverage: '1983-01-01 to 2019-12-31'
+    Description: 'Total Manufacturing / Total Manufacturing ( exclude Biomedical )'
+    Last Updated: '2020-02-25T21:41:10.939859'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Period'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Manufacturing'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Index Of Industrial Production'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: '2015 = 100'
+        Description: '"na" : Data not available or not applicable'
+  -
+    Identifier: '1b9eb071-e7c2-4e96-a67c-170e827ae6e5'
+    Title: 'Index Of Industrial Production (2015 = 100), Monthly, by manufacturing
+      clusters'
+    Url: 'https://storage.data.gov.sg/index-of-industrial-production-2015-100-monthly-by-clusters/resources/index-of-industrial-production-2015-100-monthly-by-manufacturing-clusters-2020-02-25T21-41-52Z.csv'
+    Format: 'CSV'
+    Coverage: '1983-01-01 to 2019-12-31'
+    Last Updated: '2020-02-25T21:41:52.859374'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Period'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+        Description: 'Period'
+      -
+        Name: 'level_1'
+        Title: 'Manufacturing'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Manufacturing Clusters'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Index Of Industrial Production'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: '2015=100'
+        Description: '"na" : Data not available or not applicable'
+  -
+    Identifier: '5a55603a-fe01-4b69-b37d-6a961e51ff06'
+    Title: 'Index Of Industrial Production (2015 = 100), Monthly, by manufacturing
+      sub-clusters'
+    Url: 'https://storage.data.gov.sg/index-of-industrial-production-2015-100-monthly-by-clusters/resources/index-of-industrial-production-2015-100-monthly-by-manufacturing-sub-clusters-2020-02-25T21-42-45Z.csv'
+    Format: 'CSV'
+    Coverage: '1983-01-01 to 2019-12-31'
+    Last Updated: '2020-02-25T21:42:45.809244'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Year - Month'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Manufacturing'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Manufacturing Clusters'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_3'
+        Title: 'Manufacturing sub-clusters'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Index Of Industrial Production'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: '2015 = 100'
+        Description: '"na" : Data not available or not applicable'

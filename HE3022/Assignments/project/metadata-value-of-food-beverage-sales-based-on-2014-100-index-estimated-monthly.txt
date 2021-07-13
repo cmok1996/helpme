@@ -1,0 +1,54 @@
+# Metadata for Value Of Food & Beverage Sales (Based On 2014=100 Index) - Estimated, Monthly
+---
+Identifier: '8d7a6b0c-51ee-4ab6-a107-28561791f62f'
+Name: 'value-of-food-beverage-sales-based-on-2014-100-index-estimated-monthly'
+Title: 'Value Of Food & Beverage Sales (Based On 2014=100 Index) - Estimated, Monthly'
+Description: 'The Food & Beverage Sales Value is compiled from the results of the
+  Monthly Survey of Food & Beverage Services. The objective of the survey is to measure
+  the short-term performance of food & beverage (F&B) services industries based on
+  the sales records of F&B services establishments.  The Food & Beverage Sales Value
+  is based on the Food & Beverage Services Index (FSI).'
+Topics:
+  - 'Economy'
+Keywords:
+  - 'FSI'
+  - 'food and beverage'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=6448&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Monthly'
+Coverage: '1997-01-01 to 2017-09-30'
+Last Updated: '2017-11-17T00:18:41.445757'
+Resources:
+  -
+    Identifier: '41d172e4-3c72-4b88-8bc8-776509fe0129'
+    Title: 'Food & Beverage Sales Value (Estimated), Monthly'
+    Url: 'https://storage.data.gov.sg/value-of-food-beverage-sales-based-on-2014-100-index-estimated-monthly/resources/food-beverage-sales-value-estimated-monthly-2017-11-17T00-18-40Z.csv'
+    Format: 'CSV'
+    Coverage: '1997-01-01 to 2017-09-30'
+    Last Updated: '2017-11-17T00:18:40.750901'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Month'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Main'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'S$ Million'

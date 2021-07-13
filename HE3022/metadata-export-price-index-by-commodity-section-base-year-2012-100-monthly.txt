@@ -1,0 +1,87 @@
+# Metadata for Export Price Index, By Commodity Section (1-digit level), Base Year 2012 = 100, Monthly
+---
+Identifier: '45b46d22-f075-4a37-a2b9-b3c00bcc6966'
+Name: 'export-price-index-by-commodity-section-base-year-2012-100-monthly'
+Title: 'Export Price Index, By Commodity Section (1-digit level), Base Year 2012 =
+  100, Monthly'
+Description: 'The Export Price Index measures the price changes of Singapore''s exported
+  goods. Prices of exported goods, valued at fob (free on board) are obtained monthly
+  from major exporters.'
+Topics:
+  - 'Economy'
+Keywords:
+  - 'Import'
+  - 'domestic supply'
+  - 'export'
+  - 'international trade'
+  - 'manufactured products'
+  - 'producer prices'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'Singstat Info'
+    Department: 'SIS'
+    Email: 'info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=9197&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Monthly'
+Coverage: '1978-01-01 to 2018-08-31'
+Last Updated: '2018-10-21T19:40:32.203233'
+Resources:
+  -
+    Identifier: 'd740b8db-d2b8-41fc-ab58-cbd2f3ac18bf'
+    Title: 'Export Price Index'
+    Url: 'https://storage.data.gov.sg/export-price-index-by-commodity-section-base-year-2012-100-monthly/resources/export-price-index-2018-10-21T19-39-50Z.csv'
+    Format: 'CSV'
+    Coverage: '1978-01-01 to 2018-08-31'
+    Last Updated: '2018-10-21T19:39:50.328421'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Month'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Main Index'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Index'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Index'
+  -
+    Identifier: '4a432ce5-b0cd-44a9-828c-41a0b2d164fc'
+    Title: 'Export Price Index by Commodity Section'
+    Url: 'https://storage.data.gov.sg/export-price-index-by-commodity-section-base-year-2012-100-monthly/resources/export-price-index-by-commodity-section-2018-10-21T19-40-31Z.csv'
+    Format: 'CSV'
+    Coverage: '1978-01-01 to 2018-08-31'
+    Last Updated: '2018-10-21T19:40:31.626863'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Month'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Main Index'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Commodity Section'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Index'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Index'

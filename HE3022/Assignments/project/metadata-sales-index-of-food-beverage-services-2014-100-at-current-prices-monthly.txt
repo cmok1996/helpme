@@ -1,0 +1,93 @@
+# Metadata for Food & Beverage Services Sales Index, (2014 = 100), at Current Prices, Monthly
+---
+Identifier: '1bed85d2-f15b-459d-883a-959c3430c91e'
+Name: 'sales-index-of-food-beverage-services-2014-100-at-current-prices-monthly'
+Title: 'Food & Beverage Services Sales Index, (2014 = 100), at Current Prices, Monthly'
+Description:
+  - 'The Food & Beverage Services Index (FSI) measures the short-term performance
+    of food & beverage (F&B) services industries based on the sales records of F&B
+    services establishments.'
+  - ''
+  - 'The FSI is presented at both current prices and constant prices. The indices
+    at current prices measure the changes of sales values which can result from changes
+    in both price and quantity. By removing the price effect, the indices at constant
+    prices measure the changes in the volume of economic activity.'
+  - ''
+  - 'The base year is 2014 (2014=100).'
+Topics:
+  - 'Economy'
+Keywords:
+  - 'FSI'
+  - 'food and beverage'
+  - 'food and beverage services index'
+Publisher:
+  Name: 'Ministry of Trade and Industry - Department of Statistics'
+  Admin 1:
+    Name: 'SingStat Info'
+    Department: 'Statistics Information Services'
+    Email: 'singstat_info@singstat.gov.sg'
+Sources:
+  - 'Ministry of Trade and Industry - Department of Statistics'
+Source Url: 'http://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=6443&exportType=csv'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Monthly'
+Coverage: '1985-01-01 to 2017-09-30'
+Last Updated: '2017-11-29T16:13:53.846576'
+Resources:
+  -
+    Identifier: '2346262b-678a-4402-946d-acd39b537c82'
+    Title: 'Food and Beverage Services Index at Current Prices, Monthly'
+    Url: 'https://storage.data.gov.sg/sales-index-of-food-beverage-services-2014-100-at-current-prices-monthly/resources/food-and-beverage-services-index-at-current-prices-monthly-2017-11-29T16-13-17Z.csv'
+    Format: 'CSV'
+    Coverage: '1985-01-01 to 2017-09-30'
+    Last Updated: '2017-11-29T16:13:17.237258'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Month'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Main'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Index'
+  -
+    Identifier: 'e7078a4e-be0b-41d1-b7a4-422c4888a049'
+    Title: 'Food and Beverage Services Sales Index at Current Prices by Industry,
+      Monthly'
+    Url: 'https://storage.data.gov.sg/sales-index-of-food-beverage-services-2014-100-at-current-prices-monthly/resources/food-and-beverage-services-sales-index-at-current-prices-by-industry-monthly-2017-11-29T16-13-53Z.csv'
+    Format: 'CSV'
+    Coverage: '1985-01-01 to 2017-09-30'
+    Last Updated: '2017-11-29T16:13:53.362219'
+    Schema:
+      -
+        Name: 'month'
+        Title: 'Month'
+        Type: 'datetime'
+        Sub Type: 'month'
+        Format: 'YYYY-MM'
+      -
+        Name: 'level_1'
+        Title: 'Main'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'level_2'
+        Title: 'Industry'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'value'
+        Title: 'Value'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'Index'
+        Description: '"na" : Data not available or not applicable'
